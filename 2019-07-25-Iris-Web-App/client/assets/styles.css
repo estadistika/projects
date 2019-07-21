@@ -1,0 +1,354 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #f8d382;
+}
+
+div#outer-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    margin: auto auto;
+    width: 600px;
+    height: 377px;
+    padding: 0 0 20px 0;
+}
+
+div#inner-frame {
+    text-align: center;
+    padding: 20px 40px 30px 40px;
+    text-align: center;
+    border-width: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 20px 50px 3px rgba(160, 117, 0, 0.5);
+    background-image: linear-gradient(#30034b, #230435);
+}
+
+div#header {
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+div#server-controls {
+    text-align: right;
+    float: right;
+    width: 60%;
+}
+
+div#title {
+    display: inline-block;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 40px;
+    text-align: left;
+    color: #bea1cf;
+    width: 38%;
+}
+
+table#content {
+    padding: 20px 0;
+}
+
+td {
+    vertical-align: top;
+}
+
+td#app-desc {
+    text-align: left;
+    padding: 5px 10px 0 0;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #a67dbe;
+}
+
+input {
+    display: block;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 16px;
+    margin: 8px 0px 8px 20px;
+    padding: 5px;
+    width: 120px;
+    height: 27px;
+    border-width: 0px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: inset 0 0 5px 1px rgba(110, 110, 110, 0.5);
+    background-color: #ecd4fa;
+    color: #30034b;
+    transition: all .3s ease-in-out;
+}
+
+::placeholder {
+    color: #ad8ebe;
+}
+
+input:active {
+    background-color: #eeeeee;
+}
+
+input:hover {
+    background-color: #fcf6e9;
+}
+
+div#footer {
+    text-align: left;
+}
+
+div#button-wrappers {
+    margin-right: -3px;
+    text-align: left;
+    display: inline-block;
+    width: 50%;
+}
+
+div#output {
+    text-align: center;
+    vertical-align: middle;
+    width: 25%;
+    margin-left: 125px;
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 23px;
+    display: inline-block;
+    transition: all .3s ease-in-out;
+    color: #bea1cf;
+}
+
+button {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    border-width: 0;
+    padding: 10px;
+    margin-right: 3px;
+    background-color: rgb(223, 107, 12);
+    color: #ffffff;
+    transition: all .3s ease-in-out;
+    box-shadow: 0px 0px 2px 1px rgb(23, 0, 27);
+}
+
+button:hover {
+    background-color: rgb(255, 187, 0);
+    color: #30034b;
+}
+
+button:active {
+    background-color: rgb(223, 107, 12);
+    color: #30034b;
+}
+
+table#specs {
+    border-collapse: collapse;
+    width: 80%;
+    font-size: 13px;
+    font-family: 'Saira Condensed', sans-serif;
+}
+
+table#specs tbody tr td.key {
+    background-color: #eedcf833;
+}
+
+table#specs tbody tr td {
+    padding-left: 5px;
+    border: 1px solid #723691;
+}
+
+table#specs tbody tr td#test-accuracy {
+    background-color: init;
+    color: init;
+}
+
+.updated-accuracy {
+    -webkit-animation: emphasize 3s linear;
+    /* Safari 4.0 - 8.0 */
+    animation: emphasize 3s linear;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes emphasize {
+    from {
+        background-color: init;
+        color: init;
+    }
+
+    to {
+        background-color: #eedcf833;
+        color: rgb(255, 255, 255);
+    }
+}
+
+@keyframes emphasize {
+    from {
+        background-color: init;
+        color: init;
+    }
+
+    to {
+        background-color: #eedcf833;
+        color: rgb(255, 255, 255);
+    }
+}
+
+/* Copied from */
+.segmented-control {
+    display: table;
+    float: right;
+    width: 60%;
+    margin: 20px 4px 0 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    color: #a67dbe;
+}
+
+.segmented-control-item {
+    display: table-cell;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: right;
+}
+
+.segmented-control-input {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.segmented-control-label {
+    display: block;
+    margin: 0 -1px -1px 0;
+    /* -1px margin removes double-thickness borders between items */
+    padding: 3px 6px;
+
+    border: 1px solid #eedcf833;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    color: #eedcf833;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+#julia-server.segmented-control-label {
+    border-radius: 4px 0 0 4px;
+}
+
+#python-server.segmented-control-label {
+    border-radius: 0 4px 4px 0;
+}
+
+.segmented-control-label:hover {
+    color: #30034b;
+    background-color: rgb(255, 187, 0);
+}
+
+.segmented-control-input:checked+.segmented-control-label {
+    background: rgb(223, 107, 12);
+    color: #ffffff;
+    box-shadow: inset 0px 0px 3px 1px rgb(182, 83, 2);
+}
+
+div#status {
+    background-color: rgb(138, 64, 16);
+    color: #ffffff;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 0 0 10px 10px;
+    padding: 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    box-shadow: inset 0px 2px 5px 1px rgb(71, 32, 0);
+    overflow: hidden;
+    /* transition: all 200ms ease-out; */
+    transition-property: all;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    transform: translateZ(0);
+    height: 0;
+}
+
+div#status.hidden {
+    padding: 7px;
+    height: 13px;
+}
+
+/* loading animation from https://loading.io/css/ */
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 35px;
+    height: 10px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 4px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 1px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 1px;
+    /* background-color: red; */
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 10px;
+    /* background-color: yellow; */
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 20px;
+    /* background-color: greenyellow; */
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(10px, 0);
+    }
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');

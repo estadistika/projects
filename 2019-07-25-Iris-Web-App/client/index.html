@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Model</title>
+        <script src="/assets/main.js"></script>
+        <link href="/assets/styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="outer-frame">
+            <div id="inner-frame">
+                <div id="header">
+                    <div id="title">
+                        <span>Iris Classifier</span><br>
+                        <div style="margin-top: -15px; font-size: 16px; font-family: 'Saira Condensed', sans-serif; color: #a67dbe;"><i>by</i> Al-Ahmadgaid B. Asaad</div>
+                    </div>
+                    <div id="server-controls">
+                        <div class="segmented-control">
+                            Select Server&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="segmented-control-item">
+                                <input class="segmented-control-input" type="radio" value="1" name="option" id="option-julia" checked>
+                                <label id="julia-server" class="segmented-control-label" for="option-julia">Julia</label>
+                            </div>
+                            <div class="segmented-control-item">
+                                <input class="segmented-control-input" type="radio" value="2" name="option" id="option-python" >
+                                <label id="python-server" class="segmented-control-label" for="option-python">Python</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table id="content">
+                    <tbody>
+                        <tr> 
+                            <td id="app-desc">
+                                A web application for classifying Iris species based on its sepal and petal morphology.
+                                <div style="display: block; height: 72px;"></div>
+                                <table id="specs" style="vertical-align: bottom;">
+                                    <tbody>
+                                        <tr>
+                                            <!--<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>-->
+                                             <td class="key">Model</td><td>MultiLayer Perceptron</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="key">DL Platform</td><td>Knet.jl and TF-Keras</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="key">Test Accuracy</td><td id="test-accuracy">0% (Knet.jl); 0% (TF-Keras)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td>
+                                <input class="iris-inputs" id="sepal-length" type="text" placeholder="Sepal Length">
+                                <input class="iris-inputs" id="sepal-width" type="text" placeholder="Sepal Width">
+                                <input class="iris-inputs" id="petal-length" type="text" placeholder="Petal Length">
+                                <input class="iris-inputs" id="petal-width" type="text" placeholder="Petal Width">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="footer">
+                    <div id="button-wrappers">
+                        <button id="train" type="button">Train</button>
+                        <button id="classify" type="button">Classify</button>
+                    </div>
+                    <div id="output">
+                    </div>
+                </div>
+            </div>
+            <div id="status">            
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+    </body>
+</html>
