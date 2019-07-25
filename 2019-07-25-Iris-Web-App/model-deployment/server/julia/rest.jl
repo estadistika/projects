@@ -1,7 +1,7 @@
 using HTTP
 using JSON
 
-# @info "Loading the model"
+@info "Loading helper functions"
 include("helpers.jl")
 
 function classify(req::HTTP.Request)    

@@ -153,7 +153,6 @@ function updateAccuracy(output) {
     let alab = accuracyLab()
     let accy = alab[0];
     let labs = alab[1];
-    // let jlServer = document.getElementById("option-julia");
 
     if (output === false) {
         status('', 0);
